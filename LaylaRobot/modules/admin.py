@@ -47,17 +47,17 @@ def promote(update: Update, context: CallbackContext) -> str:
     promoter = chat.get_member(user.id)
 
     if (
-        not (promoter.can_promote_members or promoter.status == "creator")
+        not (promoter.can_promote_members Or promoter.status == "creator")
         and user.id not in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that!")
+        message.reply_text("You Don't Have The Necessary Rights To Do That!")
         return
 
     user_id = extract_user(message, args)
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "You Don't Seem To Be Referring To a User Or The ID Specified Is Incorrect.."
         )
         return
 
